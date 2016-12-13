@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  elasticsearch:
+    image: elasticsearch:5.1
+    ports:
+      - 9200:9200
+      - 9300:9300
+  kibana:
+    image: kibana:5.1
+    links:
+      - elasticsearch
+    ports:
+      - 5601:5601
